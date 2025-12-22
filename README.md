@@ -7,13 +7,7 @@ This project implements the full Reinforcement Learning from Human Feedback (RLH
 
 ---
 
-## Project Structure
 
-.
-├── 1-SFT.ipynb  
-├── 2-RM Training.ipynb  
-├── 3-RLHF.ipynb  
-└── README.md  
 
 Each notebook represents a distinct stage of the RLHF pipeline.
 
@@ -21,7 +15,7 @@ Each notebook represents a distinct stage of the RLHF pipeline.
 
 ## 1. Supervised Fine-Tuning (SFT)
 
-**File:** `1-SFT.ipynb`
+**File:** `SFT.ipynb`
 
 Implements supervised fine-tuning of a pretrained language model using instruction–response pairs. This produces an instruction-following policy that serves as the base model for alignment.
 
@@ -34,7 +28,7 @@ Implements supervised fine-tuning of a pretrained language model using instructi
 
 ## 2. Reward Model Training
 
-**File:** `2-RM Training.ipynb`
+**File:** `RM Training.ipynb`
 
 Trains a reward model using pairwise preference data (chosen vs. rejected responses). The reward model learns to score outputs according to human preferences.
 
@@ -47,7 +41,7 @@ Trains a reward model using pairwise preference data (chosen vs. rejected respon
 
 ## 3. Reinforcement Learning from Human Feedback (RLHF)
 
-**File:** `3-RLHF.ipynb`
+**File:** `RLHF.ipynb`
 
 Aligns the policy using preference signals through policy optimization methods such as PPO or DPO-style objectives. The policy is optimized to maximize reward while remaining close to a reference model.
 
