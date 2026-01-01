@@ -19,18 +19,12 @@ For each prompt `x`, we observe two responses:
 We train a policy model `pi_theta(y | x)` to assign higher probability to `y+` than to `y-`, while staying close to a frozen reference model `pi_ref`.
 
 ### Key quantities (log-odds)
-Define the policy preference margin:
+Let:
+Δπ = log πθ(chosen | prompt) − log πθ(rejected | prompt)  
+Δref = log πref(chosen | prompt) − log πref(rejected | prompt)
 
-Delta_pi = log pi_theta(y+ | x) - log pi_theta(y- | x)
-
-Define the reference preference margin:
-
-Delta_ref = log pi_ref(y+ | x) - log pi_ref(y- | x)
-
-### DPO loss
-DPO minimizes:
-
-Loss = - log( sigmoid( beta * (Delta_pi - Delta_ref) ) )
+DPO loss:
+L = − log σ( β (Δπ − Δref) )
 
 where:
 - `sigmoid(z) = 1 / (1 + exp(-z))`
